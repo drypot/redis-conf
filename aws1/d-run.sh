@@ -1,9 +1,10 @@
 #!/bin/bash
 args=(
   --name redis
-  -p 6379:6379
-#  -it --rm
-  -d
+  --publish 6379:6379
+  --restart unless-stopped
+#  ----interactive --tty --rm
+  --detach
   redis:6.2.0 redis-server --save ""
 )
 docker run "${args[@]}"
