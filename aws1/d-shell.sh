@@ -1,2 +1,6 @@
 #!/bin/bash
-docker exec -it redis bash
+arg=(
+  --interactive --tty
+  redis bash
+)
+docker exec "${arg[@]}"
